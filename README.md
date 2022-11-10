@@ -25,7 +25,7 @@ I begin by selecting only the 2021-22 NBA season in order to make my unit of ana
 
 ## Data Cleaning
 
-In an attempt to use a players draft number, I need to change this into a numerical type. In order to do so, the 'Undrafted' players have to be dealt with. I find the highest drafted number to be '60' and assign all the undrafted players a value of '65'. I didnt want to skew the scale drastically, but I wanted to padd their assigned 'draft number' further from the standard one position away to account for them not being in the draft at all. During this process, I found there was a player with a draft number of '0'. Since it is not possible for a player to be drafted with a #0 pick, I recoded all palyers with a draft number of 0 to also be 65 and represetn 'Undrafted'. This method is repeated for 'Draft Round' and with 2 being the highest draft round, '3' was used for the undrafted players.
+In an attempt to use a players draft number, I need to change this into a numerical type. In order to do so, the 'Undrafted' players have to be dealt with. I find the highest drafted number to be '60' and assign all the undrafted players a value of '65'. I didnt want to skew the scale drastically, but I wanted to padd their assigned 'draft number' further from the standard one position away to account for them not being in the draft at all. During this process, I found there was a player with a draft number of '0'. Since it is not possible for a player to be drafted with a #0 pick, I recoded all palyers with a draft number of 0 to also be 65 and represent 'Undrafted'. This method is repeated for 'Draft Round' and with 2 being the highest draft round, '3' was used for the undrafted players.
 
 ## Feature Engineering
 
