@@ -62,7 +62,8 @@ The feature 'Net Rating' was identified to contain outliers within the initial P
 
 The result yielded the following scatterplot of all data points:
 
-![download](https://user-images.githubusercontent.com/93283651/200421652-2096b816-ac88-4c8d-92cd-5297fcd67adb.png)
+
+![download](https://user-images.githubusercontent.com/93283651/201404414-32f5d289-59a6-41cd-8c37-67de84343e9a.png)
 
 
 From there, the K-Means algorithm was fit with various cluster sizes to identify the most subsets that are homogeneous. The code and resulting plot are as follows:
@@ -74,7 +75,8 @@ for k in range(1,8):
     inertia.append(np.sqrt(kmeans.inertia_))
 ``
 
-![download](https://user-images.githubusercontent.com/93283651/200421697-86292087-301a-4d4b-b4df-88a329755874.png)
+![download](https://user-images.githubusercontent.com/93283651/201405008-381a21e3-2438-48ab-a190-f5ddf5bedbe7.png)
+
 
 The plot shows that the most amount of homogenous clusters within the dataset is approximately 2 or 3. 
 
@@ -82,11 +84,11 @@ The plot shows that the most amount of homogenous clusters within the dataset is
 
 Using the current PCA, 2 and 3 clusters were both tested. The results of those clusters are shown below:
 
-![download](https://user-images.githubusercontent.com/93283651/200422152-2cf1107b-b4bd-4dc4-be2d-0075fc53c8f9.png)
+![download](https://user-images.githubusercontent.com/93283651/201406494-be165d93-b38a-48d3-a0c9-d069533c22d7.png)
 
 The Classification for two clusters would be interpreted as "Starter" and "Non-Starter"
 
-![download](https://user-images.githubusercontent.com/93283651/200422346-ff1235d1-7230-4a2a-944d-c69daedda6a8.png)
+![download](https://user-images.githubusercontent.com/93283651/201407163-dfcea6aa-d217-45c7-8561-7ba87a9f0fc6.png)
 
 The Classification for three clusters would be "Starter", "Role Player", "Reserve Player"
 
@@ -94,7 +96,7 @@ The Classification for three clusters would be "Starter", "Role Player", "Reserv
 
 To evaluate these clusters, I create some basic visualizations to compare Averages and Minimums of the three. I am looking to distinguish which cluster is which classification. The bar chart for the minimum averages was the most informative and is below:
 
-![download](https://user-images.githubusercontent.com/93283651/200422470-6cef72aa-32d2-49eb-8ba0-1154f005df6e.png)
+![download](https://user-images.githubusercontent.com/93283651/201414477-5bfefdf9-47d4-4ba7-834e-4315eeba2f76.png)
 
 *Recall that our classifications are "Starter", "Role Player", and "Reserve Player". We can expect to see some variation in these statistical categories for each cluster. These categories represent season averages for a player. The above chart is showing the Lowest Season Average of a player in each of these clusters. This would mean that the if cluster 1 is the "Starter" cluster, there is a Starter who averaged a minimum of 2 points per game. This indicates a failed clustering attempt, because logically no team would start any player who averaged 2 points per game.
 
@@ -109,15 +111,15 @@ This interpretation lead to the third experiment where the features that were en
 - Shooting Efficiency
 - Assist Percentage
 
-![download](https://user-images.githubusercontent.com/93283651/200422610-73ffb86c-2da9-48a1-b858-6f0144aad4fc.png)
+![download](https://user-images.githubusercontent.com/93283651/201409939-d1f2ea9d-3aae-4191-829c-132dced3e321.png)
 
 The resulting clusters are below followed by Comparisons of Statistical Averages and Minimums of each cluster:
 
-![download](https://user-images.githubusercontent.com/93283651/200422696-e1e30226-3682-4b7f-b164-ca24340c26d2.png)
+![download](https://user-images.githubusercontent.com/93283651/201409963-3179a68d-70dd-4c5e-8e0f-249b724fa860.png)
 
-![download](https://user-images.githubusercontent.com/93283651/200422859-fbcc5475-ee9a-4d58-82ca-9fb9cb81edad.png)
+![download](https://user-images.githubusercontent.com/93283651/201414525-02acad5f-1bea-45fb-9bb3-93d36edc225a.png)
 
-![download](https://user-images.githubusercontent.com/93283651/200423170-3f437c27-e9d8-4733-bde4-2f74f9f16376.png)
+![download](https://user-images.githubusercontent.com/93283651/201414567-97c0abec-00e5-4213-85dd-98e03fe7491e.png)
 
 *Using only performance metrics in the model resulted in more accurate clustering of players for these classifications. We can see that the minimum average points for the "Starters" has improved from ~2 points per game to 15 points per game. This intuitively makes a lot more sense. We can also see that the averages decrease from Starters to Reserve Players which also intuitively makes sense and fits our classification mold. I also create an interactive plot which I manually explore to verify the accuracy of these clusters based on my personal knowledge of the game. The code for that plot can be found in the notebook in this repository.
 
